@@ -78,7 +78,6 @@ function render(lower,upper){
     for (var i = lower; i < upper; i++) {
       var place = resultArr[i];
       console.log(place);
-      html += '<h1>' + place.name + '</h1>';
       html += '<img src="'+place.icon+'"></img>';
       html += '<h4>' + "Rating: " + place.rating + '</h4>';
       html += '<h4>' + place.vicinity + '</h4><hr>';        
