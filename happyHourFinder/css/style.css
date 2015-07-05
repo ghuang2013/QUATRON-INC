@@ -1,0 +1,128 @@
+/*
+    Costomize bootstrap buttons rules
+*/
+
+.btn-group-justified {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    margin-bottom: 10px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #0CA11F;
+    border-color: #4cae4c;
+    padding: 10px;
+    border-radius: 2px;
+    font-size: larger;
+}
+
+/*
+    Navigation style rules
+*/
+
+.navbar-inverse {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    margin-top: 10px;
+}
+
+.navbar-inverse .navbar-nav>li>a,
+.navbar-inverse .navbar-nav>li>a:focus, 
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #000000;
+    background-color: transparent;
+    border-radius:5px;
+}
+
+.navbar-inverse .navbar-brand,
+.navbar-inverse .navbar-brand:focus, 
+.navbar-inverse .navbar-brand:hover {
+    color: #000000;
+    font-size:x-large;
+}
+/* for mobile only */
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #000000;
+}
+
+.navbar-inverse .navbar-toggle:focus, 
+.navbar-inverse .navbar-toggle:hover {
+    background-color: #FFFFFF;
+}
+
+/*
+    Sign-up/log-in form style rules
+*/
+
+.nav-tabs>li .active {
+    background-color: honeydew;
+    border: 1px solid #1C0A77;
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover {
+    color: #ffffff;
+    cursor: default;
+    background-color: #983CFC;
+    border: 1px solid #1C0A77;
+    border-bottom-color: transparent;
+}
+
+.form-group{
+    padding:5px;
+}
+
+form{
+    padding: 20px;
+    border: 1px solid rgb(123, 123, 218);
+}
+
+#userForm {
+    margin-top: -12px;
+}
+
+/*
+Code underneath is provided by eb33300 (stackoverflow user)
+Credits:http://stackoverflow.com/questions/18192082/bootstrap-3-navbar-collapse
+*/
+@media (max-width: 1199px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .navbar-text {
+        float: none;
+        margin: 15px 0;
+    }
+    /* since 3.1.0 */
+    .navbar-collapse.collapse.in { 
+        display: block!important;
+    }
+    .collapsing {
+        overflow: hidden!important;
+    }
+}
