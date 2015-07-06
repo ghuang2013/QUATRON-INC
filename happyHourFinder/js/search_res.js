@@ -59,7 +59,7 @@ $('#searchForm').on('submit',function(e){
 
 $("#next").on('click',function(e){
     e.preventDefault();
-    if(pageNum<maxPage){
+    if(pageNum<maxPage-1){
         pageNum++;
         render(pageNum*5,pageNum*5+5);
     }
