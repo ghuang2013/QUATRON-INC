@@ -2,6 +2,12 @@
 var myplace = document.getElementById('myPlace');*/
 var latitude;
 var longitude;
+var resultArr = [];
+var pageNum = 0;
+var maxPage = 0;
+
+$result =  $("#result");
+
 function success(pos){
     var crd = pos.coords;
     latitude =  crd.latitude;
@@ -21,19 +27,18 @@ function error(err) {
 if (navigator.geolocation){
     navigator.geolocation.getCurrentPosition(success, error);
 }else{
-    desc.innerHTML = "Your browser doesn't support GeoLocation";
+     $result.html("<p>Your browser doesn't support GeoLocation</p>");
 }
 
-var resultArr = [];
-var pageNum = 0;
-var maxPage = 0;
 $('#searchForm').on('submit',function(e){
     e.preventDefault();
     
     var y = $(window).scrollTop(); 
+    
     $("html, body").animate({ scrollTop: y + $(window).height() }, 800);
     
-    $('.pager').show();
+    $result.html("<p>searching</p>");
+    
     var type = $('#places').val();
 
     var loc = new google.maps.LatLng(latitude,longitude);
@@ -50,6 +55,7 @@ $('#searchForm').on('submit',function(e){
 
     function callback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
+          $('.pager').show();
           resultArr=results;
           maxPage=resultArr.length/5;
           render(0,5);
@@ -57,15 +63,14 @@ $('#searchForm').on('submit',function(e){
     } 
 });
 
-$("#next").on('click',function(e){
+$(".next").on('click',function(e){
     e.preventDefault();
     if(pageNum<maxPage-1){
         pageNum++;
         render(pageNum*5,pageNum*5+5);
     }
-   $("#result").animate({ scrollTop: $('#result')[0].scrollHeight}, 1000);
 });
-$("#previous").on('click',function(e){
+$(".previous").on('click',function(e){
     e.preventDefault();
     if(pageNum>0){
         pageNum--;
@@ -77,11 +82,14 @@ function render(lower,upper){
     var html="";
     for (var i = lower; i < upper; i++) {
       var place = resultArr[i];
-      console.log(place);
-      html += '<img src="'+place.icon+'"></img>';
+      html += '<div class="each_entry">';
+      html += '<a href="place.php?name='+place.name+'&id='+place.place_id+'"><h1>' + place.name + '</h1></a>';
+      html += '<a href="place.php?name='+place.name+'&id='+place.place_id+'"><img src="'+place.icon+'"></img></a>';
       html += '<h4>' + "Rating: " + place.rating + '</h4>';
-      html += '<h4>' + place.vicinity + '</h4><hr>';        
+      html += '<h4>' + place.vicinity + '</h4><hr>'; 
+      html += '</div>';
+    
     }
-  $('#result').html(html);
+  $result.html(html);
 }
 

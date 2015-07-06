@@ -12,23 +12,7 @@
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
         <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                $('.pager').hide();
-                $('.navform').load('inc/form.php?method=Login&class=navbar-form');
-                $('#userForm').load('inc/form.php?method=Login');
-                $('#in').on('click',function(){
-                    $('#up').removeClass('active');
-                    $('#in').addClass('active');
-                    $('#userForm').load('inc/form.php?method=Login');
-                });
-                $('#up').on('click',function(){
-                    $('#up').addClass('active');
-                    $('#in').removeClass('active');
-                    $('#userForm').load('inc/form.php?method=SignUp');
-                });
-            });
-        </script>
+        <scirpt src="../js/effect_main.js"></scirpt>
     </head>
     <body>
         <div class="container">

@@ -85,6 +85,12 @@ form{
     margin-top: -12px;
 }
 
+/*slideshow style*/
+
+.carousel-control.right,
+.carousel-control.left{  
+    border-radius:10px;   
+}
 /*
 Code underneath is provided by eb33300 (stackoverflow user)
 Credits:http://stackoverflow.com/questions/18192082/bootstrap-3-navbar-collapse

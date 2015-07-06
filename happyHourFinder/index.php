@@ -100,11 +100,17 @@
                     </div>
                 </div>
                 <div class="hidden-xs hidden-sm form col-md-4 col-md-offset-2 pull-right">
-                    <div class="text-center">
-                        <h4>
-                            <?php echo $status; ?>
-                        </h4>
-                    </div>
+                        <?php if($status!="") { 
+                            if($status == "Username Exists." 
+                               || $status == "Username or Password incorrect!"){ 
+                                echo '<div class="alert alert-danger fade in">'; 
+                            } elseif($status == "Success") {
+                                echo '<div class="alert alert-success fade in">'; 
+                            } 
+                            echo '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+                            echo $status; 
+                            echo '</div>'; 
+                        } ?>               
                     <div class="btn-group btn-group-justified" role="group">
                         <ul class="nav nav-tabs text-center">
                             <li role="presentation" class="active" id="in">                            
@@ -121,22 +127,35 @@
             </div>
             
             <div class="row">
+
                 <div class="container">
                     <nav>
                       <ul class="pager">
                         <li class="pull-left">
-                            <a href="#" id="previous">
-                                <i class="fa fa-backward fa-3x"></i><h3>Previous</h3></a></li>
+                            <a href="#" class="previous">
+                                <i class="fa fa-backward fa-3x"></i></a></li>
                         <li class="pull-right">
-                            <a href="#" id="next">
-                                <i class="fa fa-forward fa-3x"></i><h3>Next</h3></a></li>
+                            <a href="#" class="next">
+                                <i class="fa fa-forward fa-3x"></i></a></li>
                       </ul>
                     </nav>
                     <div id="result">
                     </div>
+                    <nav>
+                      <ul class="pager">
+                        <li class="pull-left">
+                            <a href="#" class="previous">
+                                <i class="fa fa-backward fa-3x"></i><h3>Previous</h3></a></li>
+                        <li class="pull-right">
+                            <a href="#" class="next">
+                                <i class="fa fa-forward fa-3x"></i><h3>Next</h3></a></li>
+                      </ul>
+                    </nav>
                 </div>
             </div>
+
         </div>
         <script src="js/search_res.js"></script>
+        <script src="js/effect_main.js"></script>
     </body>
 </html>
