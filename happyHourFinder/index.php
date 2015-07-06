@@ -81,7 +81,7 @@
                               <label for="places">Select your place type:</label>
                               <select class="form-control" id="places" name="places">
                                 <option>meal_delivery</option>
-                                <option>meal_takeout</option>
+                                <option>meal_takeaway</option>
                                 <option>restaurant</option>
                                 <option>bar</option>
                                 <option>cafe</option>
