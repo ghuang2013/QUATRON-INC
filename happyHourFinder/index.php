@@ -129,28 +129,14 @@
             <div class="row">
 
                 <div class="container">
-                    <nav>
-                      <ul class="pager">
-                        <li class="pull-left">
-                            <a href="#" class="previous">
-                                <i class="fa fa-backward fa-3x"></i></a></li>
-                        <li class="pull-right">
-                            <a href="#" class="next">
-                                <i class="fa fa-forward fa-3x"></i></a></li>
-                      </ul>
-                    </nav>
+                    <?php
+                        require('inc/pagination.php');
+                    ?>
                     <div id="result">
                     </div>
-                    <nav>
-                      <ul class="pager">
-                        <li class="pull-left">
-                            <a href="#" class="previous">
-                                <i class="fa fa-backward fa-3x"></i><h3>Previous</h3></a></li>
-                        <li class="pull-right">
-                            <a href="#" class="next">
-                                <i class="fa fa-forward fa-3x"></i><h3>Next</h3></a></li>
-                      </ul>
-                    </nav>
+                    <?php
+                        require('inc/pagination.php');
+                    ?>
                 </div>
             </div>
 

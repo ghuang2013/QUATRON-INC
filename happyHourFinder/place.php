@@ -29,13 +29,50 @@
                     </a>
                 </div>
             </div>
-            <!-- slideshow end -->
+            <!-- slideshow ends -->
+            <!-- company info -->
             <div class="col-sm-6">
-                <h1><?php echo $name;?></h1>
-                <div id="result"></div>
+                <div class="panel-group" 
+                     id="accordion"
+                     role="tablist" 
+                     aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading text-center" role="tab" id="headingOne">
+                      <h4 class="panel-title">
+                        <a role="button" data-toggle="collapse" 
+                           data-parent="#accordion" 
+                           href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          <h1><?php echo $name;?></h1>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" 
+                         class="panel-collapse collapse in" 
+                         role="tabpanel" 
+                         aria-labelledby="headingOne">
+                      <div class="panel-body">
+                          <div id="result">
+                              
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
+            
+            <!-- company ends -->
+        </div><br>
+         
+        <div class="row">
+            <!-- comments -->
+            <div class="col-sm-8">
+                <div id="comment">
+                    <div class="comment panel-group">
+                    </div>
+                </div>
+            </div>
+            <!-- comments end-->
         </div>
-        <div id="comment"></div>
     </div>
 
 </div><!-- main container end -->
