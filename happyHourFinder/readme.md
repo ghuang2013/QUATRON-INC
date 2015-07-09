@@ -1,6 +1,9 @@
-This is a rough draft for the Happy Hour Finder project.
-Basic search function such as displaying the name and address of nearest restaurants is implemented. 
-Advanced searching (search by happy hour most importantly), user sign up system, and comment/rating submission functionalities are not yet implemented.
-Also, GUI is pretty simple and basic for now.
+Functionalities implemented:
+1) Added search to our app. Our app can now search up to 200 nearby locations based on categories users choose.
+2) Added pagination to search results.
+3) Display the detail page for each search result.
+4) Save the name of the search result in HTTP's GET variable, so we can build our database table based on that.
+5) Users can also search for restaurants based on the zip code they entered
+
 url: http://lamp.cse.fau.edu/~ghuang2013/happyHourFinder/
 
