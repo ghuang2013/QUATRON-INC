@@ -64,70 +64,111 @@
 ?>        
             
             <div class="row">
-            <!--Sign up form goes here...-->
-                <div class="form col-md-6">
-                    <ul class="nav nav-tabs text-center">
+                <div class="form col-md-8">
+                    <ul class="nav nav-tabs text-center" role="tablist">
                         <li role="presentation" class="active">
-                            <a>
-                                <i class="fa fa-search fa-3x"></i>&nbsp;
-                                <h2>Search for a restaurant</h2>
+                            <a href="#nearby" aria-controls="nearby" role="tab" data-toggle="tab">
+                                <i class="fa fa-search fa-3x"></i>
+                                <h4>Nearby Search</h4>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#zipcode" aria-controls="zipcode" role="tab" data-toggle="tab">
+                                <i class="fa fa-map-marker fa-3x"></i>
+                                <h4>Search By Zipcode</h4>
                             </a>
                         </li>
                     </ul>
-                    <div>
-                        <form id="searchForm" class="form-horizontal" 
-                              method="post" action="index.php">
-                            <div class="form-group">
-                              <label for="places">Select your place type:</label>
-                              <select class="form-control" id="places" name="places">
-                                <option>meal_delivery</option>
-                                <option>meal_takeaway</option>
-                                <option>restaurant</option>
-                                <option>bar</option>
-                                <option>cafe</option>
-                              </select>
-                            </div>
-                            
-                            <div class="form-group text-center">
-                                <div class="col-lg-offset-2 col-lg-8">
-                                 <input type="hidden" name="array" id="array">  
-                                 <input type="submit" 
-                                           class="btn btn-success"
-                                           id="searchsubmit">
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="nearby">
+                            <form id="genericSearchForm"
+                                  class="form-horizontal" 
+                                  method="post" 
+                                  action="index.php">
+                                <div class="form-group">
+                                    <?php
+                                        require('inc/places_dropdown_list.html');
+                                    ?>
                                 </div>
-                            </div>
-                        </form>
+                                <div class="form-group text-center">
+                                    <div class="col-lg-offset-2 col-lg-8"> 
+                                     <input type="submit" 
+                                               class="btn btn-success"
+                                               id="searchsubmit">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="zipcode">
+                            <form id="advancedSearchForm"
+                                  class="form-horizontal" 
+                                  method="post"
+                                  action="index.php">
+                                <div class="form-group">
+                                    <label for="places" class="col-sm-4 control-label">Enter your zipcode/address:</label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" type="text" id="zip-code" 
+                                               placeholder="ex) Orlando, Florida 32812" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <?php
+                                        require('inc/places_dropdown_list.html');
+                                    ?>
+                                </div>
+                                <div class="form-group text-center">
+                                    <div class="col-lg-offset-2 col-lg-8">
+                                     <input type="submit" 
+                                               class="btn btn-success"
+                                               id="searchsubmit">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div class="hidden-xs hidden-sm form col-md-4 col-md-offset-2 pull-right">
-                        <?php if($status!="") { 
-                            if($status == "Username Exists." 
-                               || $status == "Username or Password incorrect!"){ 
-                                echo '<div class="alert alert-danger fade in">'; 
-                            } elseif($status == "Success") {
-                                echo '<div class="alert alert-success fade in">'; 
+                
+                <div class="hidden-xs hidden-sm form col-md-4 pull-right">
+                        <?php 
+                            if($status!="") { 
+                                if($status == "Username Exists." 
+                                   || $status == "Username or Password incorrect!"){ 
+                                    echo '<div class="alert alert-danger fade in">'; 
+                                } elseif($status == "Success") {
+                                    echo '<div class="alert alert-success fade in">'; 
+                                } 
+                                echo '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
+                                echo $status; 
+                                echo '</div>'; 
                             } 
-                            echo '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
-                            echo $status; 
-                            echo '</div>'; 
-                        } ?>               
-                    <div class="btn-group btn-group-justified" role="group">
-                        <ul class="nav nav-tabs text-center">
-                            <li role="presentation" class="active" id="in">                            
-                                <a><i class="fa fa-users fa-3x"></i>&nbsp;<h2>Login</h2></a>                                       </li>
-                            <li role="presentation" id="up">                            
-                                <a><i class="fa fa-user-plus fa-3x"></i>&nbsp;<h2>Sign Up</h2></a>                                 </li>
-                        </ul>
+                        ?>               
+                    
+                    <ul class="nav nav-tabs text-center">
+                        <li role="presentation" class="active" id="in">                            
+                            <a><i class="fa fa-key fa-3x"></i>&nbsp;
+                                <h4>Login</h4>
+                            </a>                                       
+                        </li>
+                        <li role="presentation" id="up">                            
+                            <a><i class="fa fa-user fa-3x"></i>&nbsp;
+                                <h4>Sign Up</h4>
+                            </a>                                 
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="userForm">
+                            <!--
+                                Dynamic Form: 
+                                User sign-up/login form will be loaded here using ajax function defined in effect_main.js
+                                effect_main.js contains handler for the tab switching event
+                                A generic form is defined in inc/form.php
+                            -->
+                        </div>
                     </div>
-                    <div id="userForm">
-
-                        <!--form goes here...-->
-                    </div><!--form ends here...-->
                 </div>
             </div>
-            
+            <br>
             <div class="row">
-
                 <div class="container">
                     <?php
                         require('inc/pagination.php');

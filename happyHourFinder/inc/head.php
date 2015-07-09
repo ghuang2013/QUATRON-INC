@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Happy Hour Finder</title>
+        <link rel="icon" src="../img/icon.jpg" type="image/png">
         <link rel="stylesheet"
               href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" 
