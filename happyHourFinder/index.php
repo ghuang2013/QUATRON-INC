@@ -62,6 +62,15 @@
     $on = "page1";
     require_once('inc/head.php');
 ?>        
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Happy Hour Finder</h1>
+                        <p>
+                            Some description...(Maybe insert a nice picture for the jumbotron background)     
+                        </p>
+                    <button class="btn btn-success">Get Started</button>
+                </div>
+            </div>
             
             <div class="row">
                 <div class="form col-md-8">

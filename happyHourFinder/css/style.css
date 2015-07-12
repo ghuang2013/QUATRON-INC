@@ -81,7 +81,33 @@ form{
     border: 1px solid rgb(123, 123, 218);
 }
 
-/*slideshow style*/
+.form-control{
+    border-radius: 0px;
+    border-color: darkgray;
+}
+
+/*
+    result display style
+*/
+.each_entry{
+    border:2px solid skyblue;
+    padding: 10px;
+}
+
+form[id=distance]{
+    border: 0px;
+}
+
+.fa-times{
+    color: red;
+}
+
+.fa-check{
+    color: green;
+}
+/*
+    slideshow style
+*/
 
 .carousel-control.right,
 .carousel-control.left{  
@@ -91,6 +117,32 @@ form{
 .fa-quote-left{
     margin-left: 20px;
     
+}
+
+#comment {
+    max-height: 500px;
+    overflow-y: scroll;
+    padding: 0 10px;
+}
+
+.panel-primary>.panel-heading {
+    background-color: #6CB9FC;
+}
+
+a[data-toggle=collapse]{
+    display: inline-flex;
+    color: white;
+    text-decoration: none;
+}
+
+
+a[data-toggle=collapse] .fa-3x {
+    font-size: 3em;
+    margin-right: 10px;
+    background-color: rgb(21, 26, 26);
+    padding: 15px;
+    border-radius: 50%;
+    border: 5px solid rgb(6, 141, 181);
 }
 
 /*
@@ -134,3 +186,4 @@ Credits:http://stackoverflow.com/questions/18192082/bootstrap-3-navbar-collapse
         overflow: hidden!important;
     }
 }
+

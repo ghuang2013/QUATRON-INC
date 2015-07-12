@@ -5,7 +5,6 @@ $(document).ready(function(){
     $in = $('#in');
     $up = $('#up');
     $userForm = $('#userForm');
-    
     /*
         user sign-up/log-in form 
         switch bet. nav tabs
